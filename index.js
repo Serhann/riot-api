@@ -22,7 +22,7 @@ RiotApi.prototype.getCachedJSONRequest = function(url, callback) {
             if(response.statusCode === 404) {
                 callback({
                     "status": {
-                        "message": "Not Found", 
+                        "message": "Bulunamadı.", 
                         "status_code": 404
                     }
                 });
@@ -35,7 +35,7 @@ RiotApi.prototype.getCachedJSONRequest = function(url, callback) {
 };
 // prod.api.pvp.net/api/lol/'+region+'/v1.3/summoner/by-name/'+name+'?api_key=' + auth.leagueoflegend.key/;
 RiotApi.prototype.getChampions = function(options, callback) {
-    var region = (options.region||'NA').toLowerCase();
+    var region = (options.region||'TR').toLowerCase();
     this.getCachedJSONRequest(this.BASE_PATH + region + '/v1.1/champion?api_key='+this.API_KEY, function(json) {
         if(json.hasOwnProperty('status')) callback(json);
         else if(options.hasOwnProperty('filter')) {
@@ -58,7 +58,7 @@ RiotApi.prototype.getChampions = function(options, callback) {
 };
 
 RiotApi.prototype.getRecentGames = function(options, callback) {
-    var region = (options.region||'NA').toLowerCase();
+    var region = (options.region||'TR').toLowerCase();
     if(options.hasOwnProperty('summonerId')) {
         this.getCachedJSONRequest(this.BASE_PATH + region + '/v1.3/game/by-summoner/' + options.summonerId + '/recent?api_key='+this.API_KEY, callback);
     }
@@ -77,7 +77,7 @@ RiotApi.prototype.getRecentGames = function(options, callback) {
 };
 
 RiotApi.prototype.getSummoner = function(options, callback) {
-    var region = (options.region||'NA').toLowerCase();
+    var region = (options.region||'TR').toLowerCase();
     if(options.hasOwnProperty('summonerId')) {
         this.getCachedJSONRequest(this.BASE_PATH + region + '/v1.3/summoner/' + options.summonerId + '?api_key='+this.API_KEY, callback);
     }
@@ -90,7 +90,7 @@ RiotApi.prototype.getSummoner = function(options, callback) {
 };
 
 RiotApi.prototype.getLeagues = function(options, callback) {
-    var region = (options.region||'NA').toLowerCase();
+    var region = (options.region||'TR').toLowerCase();
     if(options.hasOwnProperty('summonerId')) {
         this.getCachedJSONRequest(this.BASE_PATH + region + '/v2.3/league/by-summoner/' + options.summonerId + '?api_key='+this.API_KEY, function(json) {
             if(json.hasOwnProperty('status')) callback(json);
@@ -135,7 +135,7 @@ RiotApi.prototype.getLeagues = function(options, callback) {
 };
 
 RiotApi.prototype.getStatsSummary = function(options, callback) {
-    var region = (options.region||'NA').toLowerCase();
+    var region = (options.region||'TR').toLowerCase();
     var season = options.season ? ('SEASON'+options.season) : '';
     if(options.hasOwnProperty('summonerId')) {
         this.getCachedJSONRequest(this.BASE_PATH + region + '/v1.2/stats/by-summoner/' + options.summonerId + '/summary?season=' + season + '&api_key='+this.API_KEY, callback);
@@ -152,7 +152,7 @@ RiotApi.prototype.getStatsSummary = function(options, callback) {
 };
 
 RiotApi.prototype.getRankedStats = function(options, callback) {
-    var region = (options.region||'NA').toLowerCase();
+    var region = (options.region||'TR').toLowerCase();
     var season = options.season ? ('SEASON'+options.season) : '';
     if(options.hasOwnProperty('summonerId')) {
         this.getCachedJSONRequest(this.BASE_PATH + region + '/v1.2/stats/by-summoner/' + options.summonerId + '/ranked?season=' + season + '&api_key='+this.API_KEY, callback);
@@ -169,7 +169,7 @@ RiotApi.prototype.getRankedStats = function(options, callback) {
 };
 
 RiotApi.prototype.getMasteries = function(options, callback) {
-    var region = (options.region||'NA').toLowerCase();
+    var region = (options.region||'TR').toLowerCase();
     if(options.hasOwnProperty('summonerId')) {
         this.getCachedJSONRequest(this.BASE_PATH + region + '/v1.3/summoner/' + options.summonerId + '/masteries?api_key='+this.API_KEY, callback);
     }
@@ -185,7 +185,7 @@ RiotApi.prototype.getMasteries = function(options, callback) {
 };
 
 RiotApi.prototype.getRunes = function(options, callback) {
-    var region = (options.region||'NA').toLowerCase();
+    var region = (options.region||'TR').toLowerCase();
     if(options.hasOwnProperty('summonerId')) {
         this.getCachedJSONRequest(this.BASE_PATH + region + '/v1.3/summoner/' + options.summonerId + '/runes?api_key='+this.API_KEY, callback);
     }
@@ -201,7 +201,7 @@ RiotApi.prototype.getRunes = function(options, callback) {
 };
 
 RiotApi.prototype.getSummonerNamesByIds = function(options, callback) {
-    var region = (options.region||'NA').toLowerCase();
+    var region = (options.region||'TR').toLowerCase();
     var summonerIds = (options.summonerIds||[]).join(',');
     this.getCachedJSONRequest(this.BASE_PATH + region + '/v1.3/summoner/' + summonerIds + '/name?api_key='+this.API_KEY, function(json) {
         if(json.hasOwnProperty('status')) callback(json);
@@ -212,7 +212,7 @@ RiotApi.prototype.getSummonerNamesByIds = function(options, callback) {
 };
 
 RiotApi.prototype.getTeams = function(options, callback) {
-    var region = (options.region||'NA').toLowerCase();
+    var region = (options.region||'TR').toLowerCase();
     if(options.hasOwnProperty('summonerId')) {
         this.getCachedJSONRequest(this.BASE_PATH + region + '/v2.2/team/by-summoner/' + options.summonerId + '?api_key='+this.API_KEY, callback);
     }
