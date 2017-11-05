@@ -20,7 +20,7 @@ Retrieve all champions currently in the game.
 
 #### Options:
 
- - `region` - **string** - Region where to retrieve the data. If no region is given, `NA` will be used. Currently available regions are: `NA`, `EUW`, `EUNE`.
+ - `region` - **string** - Region where to retrieve the data. If no region is given, `TR` will be used. Currently available regions are: `NA`, `EUW`, `EUNE`.
  - `filter` - **object** - (Optional) Filter the result to only get Champions who match the specific options.
 - `active` - **boolean** - Indicates if the champion is active.
 - `rankedPlayEnabled` - **boolean** - Ranked play enabled flag.
@@ -56,7 +56,7 @@ The Result is a array of objects containing information about the champion. An o
 #### Example:
 ```javascript
 api.getChampions({
-    'region': 'NA',
+    'region': 'TR',
     'filter': {
         'freeToPlay': true
     }
@@ -72,7 +72,7 @@ Get the recent games for summoner.
 
 #### Options:
 
- - `region` - **string** - Region where to retrieve the data. If no region is given, `NA` will be used. Currently available regions are: `NA`, `EUW`, `EUNE`.
+ - `region` - **string** - Region where to retrieve the data. If no region is given, `TR` will be used. Currently available regions are: `NA`, `EUW`, `EUNE`.
  - `summonerId` - **int** - Summoner ID*.
  - `summonerName` - **string** - Summoner Name*.
 
@@ -85,7 +85,7 @@ The Result is a object with informations about the recent games of the given sum
 #### Example:
 ```javascript
 api.getChampions({
-    'region': 'NA',
+    'region': 'TR',
     'summonerName': 'TheOddOne'
     //-OR-
     //'summonerId': 60783
@@ -99,7 +99,7 @@ Retrieves leagues data for summoner, including leagues for all of summoner's tea
 
 #### Options:
 
- - `region` - **string** - Region where to retrieve the data. If no region is given, `NA` will be used. Currently available regions are: `NA`, `EUW`, `EUNE`, `BR`, `TR`.
+ - `region` - **string** - Region where to retrieve the data. If no region is given, `TR` will be used. Currently available regions are: `NA`, `EUW`, `EUNE`, `BR`, `TR`.
  - `summonerId` - **int** - Summoner ID*.
  - `summonerName` - **string** - Summoner Name*.
  - `queue` - **string** - (Optional) Only recive data for the given queue type. Legal values are: `RANKED_SOLO_5x5`, `RANKED_TEAM_3x3`, `RANKED_TEAM_5x5`.
@@ -113,7 +113,7 @@ The Result is a object with data about the leagues for the given summoner. The o
 #### Example:
 ```javascript
 api.getLeagues({
-    'region': 'NA',
+    'region': 'TR',
     'queue': 'RANKED_SOLO_5x5',
     'summonerName': 'TheOddOne'
     //-OR-
@@ -128,7 +128,7 @@ Get player stats summaries for summoner.
 
 #### Options:
 
- - `region` - **string** - Region where to retrieve the data. If no region is given, `NA` will be used. Currently available regions are: `NA`, `EUW`, `EUNE`.
+ - `region` - **string** - Region where to retrieve the data. If no region is given, `TR` will be used. Currently available regions are: `NA`, `EUW`, `EUNE`.
  - `summonerId` - **int** - Summoner ID*.
  - `summonerName` - **string** - Summoner Name*.
  - `season` - **int** - (Optional) If specified, stats for the given season are returned. Otherwise, stats for the current season are returned.
@@ -142,7 +142,7 @@ The Result is a object with data about the stats of summoner. The object is the 
 #### Example:
 ```javascript
 api.getStatsSummary({
-    'region': 'NA',
+    'region': 'TR',
     'season': 3,
     'summonerName': 'TheOddOne'
     //-OR-
@@ -157,7 +157,7 @@ Get ranked stats for summoner. Includes statistics for Twisted Treeline and Summ
 
 #### Options:
 
- - `region` - **string** - Region where to retrieve the data. If no region is given, `NA` will be used. Currently available regions are: `NA`, `EUW`, `EUNE`.
+ - `region` - **string** - Region where to retrieve the data. If no region is given, `TR` will be used. Currently available regions are: `NA`, `EUW`, `EUNE`.
  - `summonerId` - **int** - Summoner ID*.
  - `summonerName` - **string** - Summoner Name*.
  - `season` - **int** - (Optional) If specified, stats for the given season are returned. Otherwise, stats for the current season are returned.
@@ -171,7 +171,7 @@ The Result is a object with data about the ranked stats of summoner. The object 
 #### Example:
 ```javascript
 api.getRankedStats({
-    'region': 'NA',
+    'region': 'TR',
     'season': 3,
     'summonerName': 'TheOddOne'
     //-OR-
@@ -186,7 +186,7 @@ Get mastery pages for summoner.
 
 #### Options:
 
- - `region` - **string** - Region where to retrieve the data. If no region is given, `NA` will be used. Currently available regions are: `NA`, `EUW`, `EUNE`.
+ - `region` - **string** - Region where to retrieve the data. If no region is given, `TR` will be used. Currently available regions are: `NA`, `EUW`, `EUNE`.
  - `summonerId` - **int** - Summoner ID*.
  - `summonerName` - **string** - Summoner Name*.
 
@@ -199,7 +199,7 @@ The Result is a object with data about the mastery pages of summoner. The object
 #### Example:
 ```javascript
 api.getMasteries({
-    'region': 'NA',
+    'region': 'TR',
     'summonerName': 'TheOddOne'
     //-OR-
     //'summonerId': 60783
@@ -213,7 +213,7 @@ Get rune pages for summoner.
 
 #### Options:
 
- - `region` - **string** - Region where to retrieve the data. If no region is given, `NA` will be used. Currently available regions are: `NA`, `EUW`, `EUNE`.
+ - `region` - **string** - Region where to retrieve the data. If no region is given, `TR` will be used. Currently available regions are: `NA`, `EUW`, `EUNE`.
  - `summonerId` - **int** - Summoner ID*.
  - `summonerName` - **string** - Summoner Name*.
 
@@ -228,7 +228,7 @@ The `runeSlotId` fields are explained [here](https://s3-us-west-1.amazonaws.com/
 #### Example:
 ```javascript
 api.getRunes({
-    'region': 'NA',
+    'region': 'TR',
     'summonerName': 'TheOddOne'
     //-OR-
     //'summonerId': 60783
@@ -242,7 +242,7 @@ Get list of summoner names by summoner IDs.
 
 #### Options:
 
- - `region` - **string** - Region where to retrieve the data. If no region is given, `NA` will be used. Currently available regions are: `NA`, `EUW`, `EUNE`.
+ - `region` - **string** - Region where to retrieve the data. If no region is given, `TR` will be used. Currently available regions are: `NA`, `EUW`, `EUNE`.
  - `summonerIds` - **array[int]** - Summoner ID's.
 
 #### Result:
@@ -263,7 +263,7 @@ The Result is an array with objects containing name and id of a summoner.
 #### Example:
 ```javascript
 api.getRunes({
-    'region': 'NA',
+    'region': 'TR',
     'summonerIds': [60783, 5908]
 }, function(data) {
     //process data
@@ -275,7 +275,7 @@ Get basic information about summoner.
 
 #### Options:
 
- - `region` - **string** - Region where to retrieve the data. If no region is given, `NA` will be used. Currently available regions are: `NA`, `EUW`, `EUNE`.
+ - `region` - **string** - Region where to retrieve the data. If no region is given, `NA` will be used. Currently available regions are: `TR`, `EUW`, `EUNE`.
  - `summonerId` - **int** - Summoner ID*.
  - `summonerName` - **string** - Summoner Name*.
 
@@ -297,7 +297,7 @@ The Result is an object containing basic information of a summoner.
 #### Example:
 ```javascript
 api.getSummoner({
-    'region': 'NA',
+    'region': 'TR',
     'summonerName': 'TheOddOne'
     //-OR-
     //'summonerId': 60783
@@ -311,7 +311,7 @@ Retrieves teams of summoner.
 
 #### Options:
 
- - `region` - **string** - Region where to retrieve the data. If no region is given, `NA` will be used. Currently available regions are: `NA`, `EUW`, `EUNE`, `TR`, `BR`.
+ - `region` - **string** - Region where to retrieve the data. If no region is given, `TR` will be used. Currently available regions are: `NA`, `EUW`, `EUNE`, `TR`, `BR`.
  - `summonerId` - **int** - Summoner ID*.
  - `summonerName` - **string** - Summoner Name*.
 
@@ -324,7 +324,7 @@ The Result is a object with data about the teams of summoner. The object is the 
 #### Example:
 ```javascript
 api.getTeams({
-    'region': 'NA',
+    'region': 'TR',
     'summonerName': 'TheOddOne'
     //-OR-
     //'summonerId': 60783
